@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  border-top: 2px solid #d3d3d3;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 80%;
+  font-size: 1.2em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: brown;
+  padding: 1.3rem;
+  display: inline-block;
+  border: none;
+  width: 20%;
+  cursor: pointer;
+}
+
+.sendLocationButton {
+  margin-left: 2px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .sendButton {
+    padding: 0.8rem;
+  }
+
+  .sendLocationButton {
+    font-size: 0.6rem;
+    padding: 0.6rem;
+  }
+}

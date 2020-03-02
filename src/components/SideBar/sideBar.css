@@ -1,0 +1,27 @@
+.sideBar {
+  color: aliceblue;
+  height: 95vh;
+  color: white;
+  width: 225px;
+  text-align: center;
+  background-color: brown;
+  border-right: 4px solid #1a1a1d;
+}
+
+.list-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  padding: 12px 24px 0 24px;
+}
+
+.users {
+  list-style-type: none;
+  font-size: 1.3rem;
+  padding: 12px 24px 0 24px;
+}
+
+@media (min-width: 320px) and (max-width: 900px) {
+  .sideBar {
+    display: none;
+  }
+}
