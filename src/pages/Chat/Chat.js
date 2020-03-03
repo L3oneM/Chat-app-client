@@ -46,6 +46,7 @@ const Chat = ({ location }) => {
 
     return () => {
       socket.emit('disconnect');
+
       socket.off();
     };
   }, [messages]);
@@ -53,7 +54,7 @@ const Chat = ({ location }) => {
   const sendMessage = event => {
     event.preventDefault();
 
-    if (message) {
+    if (message && message !== '') {
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   };
@@ -83,7 +84,7 @@ const Chat = ({ location }) => {
   return (
     <div className='outerContainer'>
       <div className='container'>
-        <InfoBar room={room} />
+        <InfoBar room={room} socket={socket} />
         <Messages messages={messages} name={name} />
         <Input
           message={message}

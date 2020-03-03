@@ -40,7 +40,20 @@ const Message = ({ message: { text, user, createdAt }, name }) => {
   ) : (
     <div className='messageContainer justifyStart'>
       <div className='messageBox backgroundLight'>
-        <p className='messageText colorDark'>{ReactEmoji.emojify(text)}</p>
+        <p className='messageText colorDark'>
+          {text.startsWith('https') ? (
+            <a
+              href={text}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='location-link-2'
+            >
+              My current location
+            </a>
+          ) : (
+            ReactEmoji.emojify(text)
+          )}
+        </p>
       </div>
       <p className='sentText pl-10 '>
         {user} {time}

@@ -5,7 +5,10 @@ import closeIcon from '../../icons/closeIcon.png';
 
 import './InfoBar.css';
 
-const InfoBar = ({ room }) => {
+const InfoBar = ({ room, socket }) => {
+  const handleClose = () => {
+    socket.emit('disconnect');
+  };
   return (
     <div className='infoBar'>
       <div className='leftInnerContainer'>
@@ -14,7 +17,7 @@ const InfoBar = ({ room }) => {
       </div>
       <div className='rightInnerContainer'>
         <a href='/'>
-          <img src={closeIcon} alt='close icon' />
+          <img src={closeIcon} alt='close icon' onClick={handleClose} />
         </a>
       </div>
     </div>
