@@ -62,8 +62,6 @@ const Chat = ({ location }) => {
   const getGeolocation = event => {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position.coords);
-
       socket.emit(
         'sendLocation',
         {
@@ -78,8 +76,6 @@ const Chat = ({ location }) => {
       );
     });
   };
-
-  console.log(message, messages);
 
   return (
     <div className='outerContainer'>
